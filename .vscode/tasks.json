@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-Werror",
+                "-g",
+                "${file}",
+                "-ledit", //added this per http://www.buildyourownlisp.com/chapter4_interactive_prompt
+                "-lm", //added per http://www.buildyourownlisp.com/chapter6_parsing
+                // "${fileDirname}/mpc.c", //added per http://www.buildyourownlisp.com/chapter6_parsing
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        }
+    ]
+}
